@@ -1,0 +1,121 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, Mar 4, 2016 - 12:32 PM  -->
+<feature_model name="Bikesharing">
+<meta>
+<data name="description">Bikesharing</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"></data>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r Bikesharing(_r)
+	:o Status(_r_1)
+		:g (_r_1_34) [1,*] 
+			: RTInfoWeb(_r_1_34_35)
+			: AllBikesNow(_r_1_34_36)
+	:m Bike(_r_2)
+		:o Localization(_r_2_8)
+			:g (_r_2_8_37) [1,*] 
+				: GPS(_r_2_8_37_38)
+				: RFID(_r_2_8_37_39)
+		:o Antithieves(_r_2_9)
+	:m DockingStation(_r_3)
+		:g (_r_3_40) [1,1] 
+			: Fixed(_r_3_40_41)
+			: FixedPortable(_r_3_40_42)
+			: Flexible(_r_3_40_43)
+	:o Maintenance(_r_4)
+	:o Redistribution(_r_5)
+		:o Reward(_r_5_11)
+	:m Users(_r_6)
+		:m AccessMgmtSys(_r_6_12)
+			:g (_r_6_12_44) [1,*] 
+				: SmartCard(_r_6_12_44_45)
+				: SmartPhone(_r_6_12_44_46)
+				: Keycard(_r_6_12_44_47)
+		:m UserRegistration(_r_6_13)
+			:g (_r_6_13_48) [1,*] 
+				: KioskReg(_r_6_13_48_49)
+					:o TouchScreen(_r_6_13_48_49_52)
+					:o KeycardReader(_r_6_13_48_49_53)
+					:o CreditCards(_r_6_13_48_49_54)
+					:o KeycardDispenser(_r_6_13_48_49_55)
+				: DockStat(_r_6_13_48_50)
+				: WebReg(_r_6_13_48_51)
+</feature_tree>
+<constraints>
+constraint_1:~_r_1_34_36 or _r_2_8_37_38
+constraint_4:~_r_6_12_44_47 or _r_6_13_48_49_53
+constraint_5:~_r_6_12_44_47 or _r_6_13_48_49_55
+constraint_2:~_r_2_9 or _r_2_8_37_38
+constraint_3:_r_6_12_44_47 or ~_r_6_13_48_49_55
+</constraints>
+
+<context name="LocalizationGPS">
+<resolution feature="Status" id="_r_1" status="true"/>
+<resolution feature="RTInfoWeb" id="_r_1_34_35" status="true"/>
+<resolution feature="AllBikesNow" id="_r_1_34_36" status="false"/>
+<resolution feature="Bike" id="_r_2" status="true"/>
+<resolution feature="Localization" id="_r_2_8" status="true"/>
+<resolution feature="GPS" id="_r_2_8_37_38" status="true"/>
+<resolution feature="RFID" id="_r_2_8_37_39" status="false"/>
+<resolution feature="Antithieves" id="_r_2_9" status="true"/>
+<resolution feature="DockingStation" id="_r_3" status="true"/>
+<resolution feature="Fixed" id="_r_3_40_41" status="true"/>
+<resolution feature="FixedPortable" id="_r_3_40_42" status="false"/>
+<resolution feature="Flexible" id="_r_3_40_43" status="false"/>
+<resolution feature="Maintenance" id="_r_4" status="true"/>
+<resolution feature="Redistribution" id="_r_5" status="false"/>
+<resolution feature="Reward" id="_r_5_11" status="false"/>
+<resolution feature="Users" id="_r_6" status="true"/>
+<resolution feature="AccessMgmtSys" id="_r_6_12" status="true"/>
+<resolution feature="SmartCard" id="_r_6_12_44_45" status="true"/>
+<resolution feature="SmartPhone" id="_r_6_12_44_46" status="true"/>
+<resolution feature="Keycard" id="_r_6_12_44_47" status="false"/>
+<resolution feature="UserRegistration" id="_r_6_13" status="true"/>
+<resolution feature="KioskReg" id="_r_6_13_48_49" status="false"/>
+<resolution feature="TouchScreen" id="_r_6_13_48_49_52" status="false"/>
+<resolution feature="KeycardReader" id="_r_6_13_48_49_53" status="false"/>
+<resolution feature="CreditCards" id="_r_6_13_48_49_54" status="false"/>
+<resolution feature="KeycardDispenser" id="_r_6_13_48_49_55" status="false"/>
+<resolution feature="DockStat" id="_r_6_13_48_50" status="false"/>
+<resolution feature="WebReg" id="_r_6_13_48_51" status="true"/>
+</context>
+
+<context name="KeycardReaderON">
+<resolution feature="Status" id="_r_1" status="true"/>
+<resolution feature="RTInfoWeb" id="_r_1_34_35" status="true"/>
+<resolution feature="AllBikesNow" id="_r_1_34_36" status="false"/>
+<resolution feature="Bike" id="_r_2" status="true"/>
+<resolution feature="Localization" id="_r_2_8" status="true"/>
+<resolution feature="GPS" id="_r_2_8_37_38" status="true"/>
+<resolution feature="RFID" id="_r_2_8_37_39" status="false"/>
+<resolution feature="Antithieves" id="_r_2_9" status="true"/>
+<resolution feature="DockingStation" id="_r_3" status="true"/>
+<resolution feature="Fixed" id="_r_3_40_41" status="true"/>
+<resolution feature="FixedPortable" id="_r_3_40_42" status="false"/>
+<resolution feature="Flexible" id="_r_3_40_43" status="false"/>
+<resolution feature="Maintenance" id="_r_4" status="true"/>
+<resolution feature="Redistribution" id="_r_5" status="false"/>
+<resolution feature="Reward" id="_r_5_11" status="false"/>
+<resolution feature="Users" id="_r_6" status="true"/>
+<resolution feature="AccessMgmtSys" id="_r_6_12" status="true"/>
+<resolution feature="SmartCard" id="_r_6_12_44_45" status="true"/>
+<resolution feature="SmartPhone" id="_r_6_12_44_46" status="true"/>
+<resolution feature="Keycard" id="_r_6_12_44_47" status="true"/>
+<resolution feature="UserRegistration" id="_r_6_13" status="true"/>
+<resolution feature="KioskReg" id="_r_6_13_48_49" status="true"/>
+<resolution feature="TouchScreen" id="_r_6_13_48_49_52" status="false"/>
+<resolution feature="KeycardReader" id="_r_6_13_48_49_53" status="true"/>
+<resolution feature="CreditCards" id="_r_6_13_48_49_54" status="false"/>
+<resolution feature="KeycardDispenser" id="_r_6_13_48_49_55" status="true"/>
+<resolution feature="DockStat" id="_r_6_13_48_50" status="false"/>
+<resolution feature="WebReg" id="_r_6_13_48_51" status="true"/>
+</context>
+
+</feature_model>

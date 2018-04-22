@@ -1,0 +1,166 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, Mar 4, 2016 - 1:55 PM  -->
+<feature_model name="DSPLFamily">
+<meta>
+<data name="description">Feature model of the  DSPL family</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"></data>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r DSPLFamily(_r)
+	:m Base(_r_1)
+		:m Monitor(_r_1_2)
+			:g (_r_1_2_7) [1,*] 
+				: ContextStatus(_r_1_2_7_8)
+				: SystemStatus(_r_1_2_7_9)
+					:m QoSSensor(_r_1_2_7_9_11)
+						:g (_r_1_2_7_9_11_12) [1,*] 
+							: Availability(_r_1_2_7_9_11_12_13)
+							: Reability(_r_1_2_7_9_11_12_14)
+							: Accuracy(_r_1_2_7_9_11_12_15)
+							: Integrity(_r_1_2_7_9_11_12_16)
+							: Performance(_r_1_2_7_9_11_12_17)
+							: Robustness(_r_1_2_7_9_11_12_18)
+							: MemoryCons(_r_1_2_7_9_11_12_19)
+				: SLA(_r_1_2_7_10)
+		:m Analyse(_r_1_3)
+			:m FMStrategy(_r_1_3_20)
+				:g (_r_1_3_20_22) [1,1] 
+					: DynamicModels(_r_1_3_20_22_23)
+					: StaticModels(_r_1_3_20_22_24)
+			:o CompositionType(_r_1_3_21)
+				:m StaticComposition(_r_1_3_21_25)
+				:m DynamicComposition(_r_1_3_21_26)
+		:m Plan(_r_1_4)
+			:m AdaptationStrategy(_r_1_4_27)
+				:m SwapComponents(_r_1_4_27_28)
+				:o Rearchitecture(_r_1_4_27_29)
+			:m ServiceStrategy(_r_1_4_30)
+				:g (_r_1_4_30_31) [1,*] 
+					: PredefinedServices(_r_1_4_30_31_32)
+						:g (_r_1_4_30_31_32_34) [1,1] 
+							: DynDecision(_r_1_4_30_31_32_34_35)
+							: StaticDecision(_r_1_4_30_31_32_34_36)
+					: ServiceDescovery(_r_1_4_30_31_33)
+		:m Execute(_r_1_5)
+			:o ReconfigScripts(_r_1_5_37)
+			:m Effector(_r_1_5_38)
+				:m UnBoundComponents(_r_1_5_38_39)
+				:o DisConectService(_r_1_5_38_40)
+		:m Pattern(_r_1_6)
+			:g (_r_1_6_41) [1,1] 
+				: Centralized(_r_1_6_41_42)
+				: Descentralized(_r_1_6_41_43)
+					:g (_r_1_6_41_43_44) [1,1] 
+						: CordinatedControl(_r_1_6_41_43_44_45)
+						: InformationSharing(_r_1_6_41_43_44_46)
+						: MasterSlave(_r_1_6_41_43_44_47)
+						: RegionalPlanning(_r_1_6_41_43_44_48)
+						: Hierarchicalcontrol(_r_1_6_41_43_44_49)
+</feature_tree>
+<constraints>
+constraint_1:_r_1_2_7_10 or ~_r_1_4_30_31_33
+constraint_6:~_r_1_3_20_22_24 or ~_r_1_4_30_31_33
+constraint_4:~_r_1_3_20_22_24 or ~_r_1_4_27_29
+constraint_5:~_r_1_4_27_29 or _r_1_5_37
+constraint_2:~_r_1_2_7_10 or _r_1_4_30_31_33
+constraint_3:~_r_1_3_20_22_24 or _r_1_4_30_31_32_34_36
+</constraints>
+
+<context name="defalt">
+<resolution feature="Base" id="_r_1" status="true"/>
+<resolution feature="Monitor" id="_r_1_2" status="true"/>
+<resolution feature="ContextStatus" id="_r_1_2_7_8" status="true"/>
+<resolution feature="SystemStatus" id="_r_1_2_7_9" status="true"/>
+<resolution feature="QoSSensor" id="_r_1_2_7_9_11" status="true"/>
+<resolution feature="Availability" id="_r_1_2_7_9_11_12_13" status="true"/>
+<resolution feature="Reability" id="_r_1_2_7_9_11_12_14" status="true"/>
+<resolution feature="Accuracy" id="_r_1_2_7_9_11_12_15" status="true"/>
+<resolution feature="Integrity" id="_r_1_2_7_9_11_12_16" status="true"/>
+<resolution feature="Performance" id="_r_1_2_7_9_11_12_17" status="true"/>
+<resolution feature="Robustness" id="_r_1_2_7_9_11_12_18" status="true"/>
+<resolution feature="MemoryCons" id="_r_1_2_7_9_11_12_19" status="true"/>
+<resolution feature="SLA" id="_r_1_2_7_10" status="false"/>
+<resolution feature="Analyse" id="_r_1_3" status="true"/>
+<resolution feature="FMStrategy" id="_r_1_3_20" status="true"/>
+<resolution feature="DynamicModels" id="_r_1_3_20_22_23" status="false"/>
+<resolution feature="StaticModels" id="_r_1_3_20_22_24" status="true"/>
+<resolution feature="CompositionType" id="_r_1_3_21" status="true"/>
+<resolution feature="StaticComposition" id="_r_1_3_21_25" status="true"/>
+<resolution feature="DynamicComposition" id="_r_1_3_21_26" status="true"/>
+<resolution feature="Plan" id="_r_1_4" status="true"/>
+<resolution feature="AdaptationStrategy" id="_r_1_4_27" status="true"/>
+<resolution feature="SwapComponents" id="_r_1_4_27_28" status="true"/>
+<resolution feature="Rearchitecture" id="_r_1_4_27_29" status="false"/>
+<resolution feature="ServiceStrategy" id="_r_1_4_30" status="true"/>
+<resolution feature="PredefinedServices" id="_r_1_4_30_31_32" status="true"/>
+<resolution feature="DynDecision" id="_r_1_4_30_31_32_34_35" status="false"/>
+<resolution feature="StaticDecision" id="_r_1_4_30_31_32_34_36" status="true"/>
+<resolution feature="ServiceDescovery" id="_r_1_4_30_31_33" status="false"/>
+<resolution feature="Execute" id="_r_1_5" status="true"/>
+<resolution feature="ReconfigScripts" id="_r_1_5_37" status="true"/>
+<resolution feature="Effector" id="_r_1_5_38" status="true"/>
+<resolution feature="UnBoundComponents" id="_r_1_5_38_39" status="true"/>
+<resolution feature="DisConectService" id="_r_1_5_38_40" status="true"/>
+<resolution feature="Pattern" id="_r_1_6" status="true"/>
+<resolution feature="Centralized" id="_r_1_6_41_42" status="true"/>
+<resolution feature="Descentralized" id="_r_1_6_41_43" status="false"/>
+<resolution feature="CordinatedControl" id="_r_1_6_41_43_44_45" status="false"/>
+<resolution feature="InformationSharing" id="_r_1_6_41_43_44_46" status="false"/>
+<resolution feature="MasterSlave" id="_r_1_6_41_43_44_47" status="false"/>
+<resolution feature="RegionalPlanning" id="_r_1_6_41_43_44_48" status="false"/>
+<resolution feature="Hierarchicalcontrol" id="_r_1_6_41_43_44_49" status="false"/>
+</context>
+
+<context name="SLA_ON">
+<resolution feature="Base" id="_r_1" status="true"/>
+<resolution feature="Monitor" id="_r_1_2" status="true"/>
+<resolution feature="ContextStatus" id="_r_1_2_7_8" status="true"/>
+<resolution feature="SystemStatus" id="_r_1_2_7_9" status="true"/>
+<resolution feature="QoSSensor" id="_r_1_2_7_9_11" status="true"/>
+<resolution feature="Availability" id="_r_1_2_7_9_11_12_13" status="true"/>
+<resolution feature="Reability" id="_r_1_2_7_9_11_12_14" status="true"/>
+<resolution feature="Accuracy" id="_r_1_2_7_9_11_12_15" status="true"/>
+<resolution feature="Integrity" id="_r_1_2_7_9_11_12_16" status="true"/>
+<resolution feature="Performance" id="_r_1_2_7_9_11_12_17" status="true"/>
+<resolution feature="Robustness" id="_r_1_2_7_9_11_12_18" status="true"/>
+<resolution feature="MemoryCons" id="_r_1_2_7_9_11_12_19" status="true"/>
+<resolution feature="SLA" id="_r_1_2_7_10" status="true"/>
+<resolution feature="Analyse" id="_r_1_3" status="true"/>
+<resolution feature="FMStrategy" id="_r_1_3_20" status="true"/>
+<resolution feature="DynamicModels" id="_r_1_3_20_22_23" status="true"/>
+<resolution feature="StaticModels" id="_r_1_3_20_22_24" status="false"/>
+<resolution feature="CompositionType" id="_r_1_3_21" status="true"/>
+<resolution feature="StaticComposition" id="_r_1_3_21_25" status="true"/>
+<resolution feature="DynamicComposition" id="_r_1_3_21_26" status="true"/>
+<resolution feature="Plan" id="_r_1_4" status="true"/>
+<resolution feature="AdaptationStrategy" id="_r_1_4_27" status="true"/>
+<resolution feature="SwapComponents" id="_r_1_4_27_28" status="true"/>
+<resolution feature="Rearchitecture" id="_r_1_4_27_29" status="true"/>
+<resolution feature="ServiceStrategy" id="_r_1_4_30" status="true"/>
+<resolution feature="PredefinedServices" id="_r_1_4_30_31_32" status="true"/>
+<resolution feature="DynDecision" id="_r_1_4_30_31_32_34_35" status="true"/>
+<resolution feature="StaticDecision" id="_r_1_4_30_31_32_34_36" status="false"/>
+<resolution feature="ServiceDescovery" id="_r_1_4_30_31_33" status="true"/>
+<resolution feature="Execute" id="_r_1_5" status="true"/>
+<resolution feature="ReconfigScripts" id="_r_1_5_37" status="true"/>
+<resolution feature="Effector" id="_r_1_5_38" status="true"/>
+<resolution feature="UnBoundComponents" id="_r_1_5_38_39" status="true"/>
+<resolution feature="DisConectService" id="_r_1_5_38_40" status="true"/>
+<resolution feature="Pattern" id="_r_1_6" status="true"/>
+<resolution feature="Centralized" id="_r_1_6_41_42" status="false"/>
+<resolution feature="Descentralized" id="_r_1_6_41_43" status="true"/>
+<resolution feature="CordinatedControl" id="_r_1_6_41_43_44_45" status="true"/>
+<resolution feature="InformationSharing" id="_r_1_6_41_43_44_46" status="true"/>
+<resolution feature="MasterSlave" id="_r_1_6_41_43_44_47" status="true"/>
+<resolution feature="RegionalPlanning" id="_r_1_6_41_43_44_48" status="true"/>
+<resolution feature="Hierarchicalcontrol" id="_r_1_6_41_43_44_49" status="true"/>
+</context>
+
+</feature_model>

@@ -1,0 +1,94 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, Mar 4, 2016 - 4:51 PM  -->
+<feature_model name="Nexus DSPL">
+<meta>
+<data name="description">Google Nexus DSPL</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"></data>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r Nexus DSPL(_r)
+	:m Connectivity(_r_1)
+		:g (_r_1_5) [1,1] 
+			: Ad_Hoc(_r_1_5_6)
+				:m WLAN_Ad_Hoc(_r_1_5_6_8)
+			: Infrastructure(_r_1_5_7)
+				:g (_r_1_5_7_9) [1,1] 
+					: WLAN_AP(_r_1_5_7_9_10)
+					: Cellular(_r_1_5_7_9_11)
+	:m Routing(_r_2)
+		:g (_r_2_12) [1,1] 
+			: BGP(_r_2_12_13)
+			: LAR(_r_2_12_14)
+	:o Sensors(_r_3)
+		:g (_r_3_15) [1,*] 
+			: Gyroscope(_r_3_15_16)
+			: GPS(_r_3_15_17)
+	:o Application(_r_4)
+		:g (_r_4_18) [1,*] 
+			: Navigation(_r_4_18_19)
+			: Game_Hub(_r_4_18_20)
+			: Phone_Call(_r_4_18_21)
+				:g (_r_4_18_21_22) [1,*] 
+					: Cellular_Call(_r_4_18_21_22_23)
+					: VoIP(_r_4_18_21_22_24)
+</feature_tree>
+<constraints>
+constraint_1:~_r_1_5_6_8 or ~_r_2_12_13
+constraint_6:_r_3_15_16 or ~_r_4_18_20
+constraint_7:_r_3_15_17 or ~_r_4_18_19
+constraint_4:_r_1_5_7_9_11 or ~_r_4_18_21_22_23
+constraint_5:~_r_2_12_14 or _r_3_15_17
+constraint_2:~_r_1_5_7_9_10 or _r_2_12_13
+constraint_3:~_r_1_5_7_9_11 or _r_2_12_13
+</constraints>
+
+<context name="Reduction_Possibility">
+<resolution feature="Connectivity" id="_r_1" status="true"/>
+<resolution feature="Ad_Hoc" id="_r_1_5_6" status="false"/>
+<resolution feature="WLAN_Ad_Hoc" id="_r_1_5_6_8" status="false"/>
+<resolution feature="Infrastructure" id="_r_1_5_7" status="true"/>
+<resolution feature="WLAN_AP" id="_r_1_5_7_9_10" status="false"/>
+<resolution feature="Cellular" id="_r_1_5_7_9_11" status="true"/>
+<resolution feature="Routing" id="_r_2" status="true"/>
+<resolution feature="BGP" id="_r_2_12_13" status="true"/>
+<resolution feature="LAR" id="_r_2_12_14" status="false"/>
+<resolution feature="Sensors" id="_r_3" status="true"/>
+<resolution feature="Gyroscope" id="_r_3_15_16" status="true"/>
+<resolution feature="GPS" id="_r_3_15_17" status="true"/>
+<resolution feature="Application" id="_r_4" status="true"/>
+<resolution feature="Navigation" id="_r_4_18_19" status="true"/>
+<resolution feature="Game_Hub" id="_r_4_18_20" status="true"/>
+<resolution feature="Phone_Call" id="_r_4_18_21" status="true"/>
+<resolution feature="Cellular_Call" id="_r_4_18_21_22_23" status="true"/>
+<resolution feature="VoIP" id="_r_4_18_21_22_24" status="true"/>
+</context>
+
+<context name="WLAN_AP_ON">
+<resolution feature="Connectivity" id="_r_1" status="true"/>
+<resolution feature="Ad_Hoc" id="_r_1_5_6" status="false"/>
+<resolution feature="WLAN_Ad_Hoc" id="_r_1_5_6_8" status="false"/>
+<resolution feature="Infrastructure" id="_r_1_5_7" status="true"/>
+<resolution feature="WLAN_AP" id="_r_1_5_7_9_10" status="true"/>
+<resolution feature="Cellular" id="_r_1_5_7_9_11" status="false"/>
+<resolution feature="Routing" id="_r_2" status="true"/>
+<resolution feature="BGP" id="_r_2_12_13" status="true"/>
+<resolution feature="LAR" id="_r_2_12_14" status="false"/>
+<resolution feature="Sensors" id="_r_3" status="true"/>
+<resolution feature="Gyroscope" id="_r_3_15_16" status="true"/>
+<resolution feature="GPS" id="_r_3_15_17" status="true"/>
+<resolution feature="Application" id="_r_4" status="true"/>
+<resolution feature="Navigation" id="_r_4_18_19" status="true"/>
+<resolution feature="Game_Hub" id="_r_4_18_20" status="true"/>
+<resolution feature="Phone_Call" id="_r_4_18_21" status="false"/>
+<resolution feature="Cellular_Call" id="_r_4_18_21_22_23" status="false"/>
+<resolution feature="VoIP" id="_r_4_18_21_22_24" status="false"/>
+</context>
+
+</feature_model>

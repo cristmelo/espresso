@@ -1,0 +1,39 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Thu, Jun 11, 2015 - 1:53 AM  -->
+<feature_model name="WSN">
+<meta>
+<data name="description">FamiWare Configuration</data>
+<data name="creator">Gabriel Goulart</data>
+<data name="address"></data>
+<data name="email">gabrielgoulart@great.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">GREAT-UFC</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r WSN(_r)
+	:m Network(_r_1)
+		:m NrNodes(_r_1_3)
+		:m Routing(_r_1_4)
+		:o QoS(_r_1_5)
+	:m Sensor(_r_2)
+		:m ID(_r_2_6)
+		:m mKernel(_r_2_7)
+		:o Services(_r_2_8)
+</feature_tree>
+<constraints>
+</constraints>
+<context name="Default">
+<resolution feature="Network" id="_r_1" status="true"/>
+<resolution feature="NrNodes" id="_r_1_3" status="true"/>
+<resolution feature="Routing" id="_r_1_4" status="true"/>
+<resolution feature="QoS" id="_r_1_5" status="false"/>
+<resolution feature="Sensor" id="_r_2" status="true"/>
+<resolution feature="ID" id="_r_2_6" status="true"/>
+<resolution feature="mKernel" id="_r_2_7" status="true"/>
+<resolution feature="Services" id="_r_2_8" status="false"/>
+<constraints/>
+</context>
+</feature_model>

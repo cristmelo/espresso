@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Wed, Jul 1, 2015 - 10:00 PM  --><feature_model name="VsSystem">
+<meta>
+<data name="description">Initial partial configuration</data>
+<data name="creator">gabriel</data>
+<data name="address"/>
+<data name="email">gabrielgoulart@great.ufc.br</data>
+<data name="phone"/>
+<data name="website"/>
+<data name="organization">Great</data>
+<data name="department"/>
+<data name="date"/>
+<data name="reference"/>
+</meta>
+<feature_tree>
+:r VsSystem(_r)
+	:m VsComponent(_r_1)
+		:m ImageAcquisition(_r_1_2)
+			:m Resolution(_r_1_2_3)
+				:g (_r_1_2_3_5) [1,1] 
+					: High(_r_1_2_3_5_6)
+					: Low(_r_1_2_3_5_8)
+			:m Color(_r_1_2_4)
+				:g (_r_1_2_4_9) [1,1] 
+					: Full(_r_1_2_4_9_10)
+					: BeW(_r_1_2_4_9_11)
+					: NearIR(_r_1_2_4_9_12)
+		:m Segmentation(_r_1_13)
+		:m Classification(_r_1_16)
+			:g (_r_1_16_17) [1,*] 
+				: Any Object(_r_1_16_17_18)
+				: People(_r_1_16_17_19)
+		:o Shadow Removal(_r_1_20)
+		:m Traking(_r_1_21)
+			:g (_r_1_21_24) [1,1] 
+				: FrametoFram(_r_1_21_24_25)
+					:g (_r_1_21_24_25_27) [1,*] 
+						: 3D(_r_1_21_24_25_27_28)
+						: Color(_r_1_21_24_25_27_29)
+						: Texture(_r_1_21_24_25_27_30)
+				: Longterm(_r_1_21_24_26)
+					:g (_r_1_21_24_26_31) [1,*] 
+						: 3D(_r_1_21_24_26_31_32)
+						: Color(_r_1_21_24_26_31_33)
+						: Texture(_r_1_21_24_26_31_34)
+		:o ScenarioRecogitio(_r_1_36)
+			:g (_r_1_36_37) [1,1] 
+				: Simple(_r_1_36_37_38)
+				: People Based(_r_1_36_37_39)
+</feature_tree>
+<constraints>
+</constraints>
+<context name="C1">
+<resolution feature="VsComponent" id="_r_1" status="true"/>
+<resolution feature="ImageAcquisition" id="_r_1_2" status="true"/>
+<resolution feature="Resolution" id="_r_1_2_3" status="true"/>
+<resolution feature="High" id="_r_1_2_3_5_6" status="true"/>
+<resolution feature="Low" id="_r_1_2_3_5_8" status="false"/>
+<resolution feature="Color" id="_r_1_2_4" status="true"/>
+<resolution feature="NearIR" id="_r_1_2_4_9_12" status="true"/>
+<resolution feature="BeW" id="_r_1_2_4_9_11" status="false"/>
+<resolution feature="Full" id="_r_1_2_4_9_10" status="false"/>
+<resolution feature="Segmentation" id="_r_1_13" status="true"/>
+<resolution feature="Classification" id="_r_1_16" status="true"/>
+<resolution feature="Any Object" id="_r_1_16_17_18" status="true"/>
+<resolution feature="People" id="_r_1_16_17_19" status="false"/>
+<resolution feature="Shadow Removal" id="_r_1_20" status="false"/>
+<resolution feature="Traking" id="_r_1_21" status="true"/>
+<resolution feature="FrametoFram" id="_r_1_21_24_25" status="false"/>
+<resolution feature="3D" id="_r_1_21_24_25_27_28" status="true"/>
+<resolution feature="Color" id="_r_1_21_24_25_27_29" status="false"/>
+<resolution feature="Texture" id="_r_1_21_24_25_27_30" status="false"/>
+<resolution feature="Longterm" id="_r_1_21_24_26" status="true"/>
+<resolution feature="3D" id="_r_1_21_24_26_31_32" status="true"/>
+<resolution feature="Color" id="_r_1_21_24_26_31_33" status="false"/>
+<resolution feature="Texture" id="_r_1_21_24_26_31_34" status="false"/>
+<resolution feature="ScenarioRecogitio" id="_r_1_36" status="true"/>
+<resolution feature="Simple" id="_r_1_36_37_38" status="true"/>
+<resolution feature="People Based" id="_r_1_36_37_39" status="false"/>
+<constraints/>
+</context>
+
+<context name="C2">
+<resolution feature="VsComponent" id="_r_1" status="true"/>
+<resolution feature="ImageAcquisition" id="_r_1_2" status="true"/>
+<resolution feature="Resolution" id="_r_1_2_3" status="true"/>
+<resolution feature="High" id="_r_1_2_3_5_6" status="false"/>
+<resolution feature="Low" id="_r_1_2_3_5_8" status="true"/>
+<resolution feature="Color" id="_r_1_2_4" status="true"/>
+<resolution feature="NearIR" id="_r_1_2_4_9_12" status="false"/>
+<resolution feature="BeW" id="_r_1_2_4_9_11" status="false"/>
+<resolution feature="Full" id="_r_1_2_4_9_10" status="true"/>
+<resolution feature="Segmentation" id="_r_1_13" status="true"/>
+<resolution feature="Classification" id="_r_1_16" status="true"/>
+<resolution feature="Any Object" id="_r_1_16_17_18" status="true"/>
+<resolution feature="People" id="_r_1_16_17_19" status="false"/>
+<resolution feature="Shadow Removal" id="_r_1_20" status="false"/>
+<resolution feature="Traking" id="_r_1_21" status="true"/>
+<resolution feature="FrametoFram" id="_r_1_21_24_25" status="false"/>
+<resolution feature="3D" id="_r_1_21_24_25_27_28" status="false"/>
+<resolution feature="Color" id="_r_1_21_24_25_27_29" status="false"/>
+<resolution feature="Texture" id="_r_1_21_24_25_27_30" status="false"/>
+<resolution feature="Longterm" id="_r_1_21_24_26" status="true"/>
+<resolution feature="3D" id="_r_1_21_24_26_31_32" status="true"/>
+<resolution feature="Color" id="_r_1_21_24_26_31_33" status="false"/>
+<resolution feature="Texture" id="_r_1_21_24_26_31_34" status="false"/>
+<resolution feature="ScenarioRecogitio" id="_r_1_36" status="true"/>
+<resolution feature="Simple" id="_r_1_36_37_38" status="true"/>
+<resolution feature="People Based" id="_r_1_36_37_39" status="false"/>
+<constraints/>
+</context>
+
+</feature_model>

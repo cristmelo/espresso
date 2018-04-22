@@ -1,0 +1,133 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Thu, May 7, 2015 - 12:34 AM  -->
+<feature_model name="Wireless sensor actuator network">
+<meta>
+<data name="description">Wireless sensor actuator network</data>
+<data name="creator">Gabriel Goulart</data>
+<data name="address"></data>
+<data name="email">gabrielgoulart@great.ufc.br</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Great-UFC</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r WSAN(_r)
+	:m Communication(_r_1)
+		:m Comm Type(_r_1_2)
+			:o Periodical(_r_1_2_4)
+			:o Event Based(_r_1_2_5)
+			:o On Demand(_r_1_2_6)
+		:m Nodes Identity(_r_1_3)
+			:o Location Based(_r_1_3_7)
+			:o Adress Based(_r_1_3_8)
+				:g (_r_1_3_10) [1,*] 
+					: Unicast(_r_1_3_10_11)
+					: Multcast(_r_1_3_10_12)
+	:o Mensurement(_r_14)
+		:g (_r_14_15) [1,*] 
+			: Temperature(_r_14_15_16)
+			: Humidity(_r_14_15_17)
+			: Light(_r_14_15_18)
+			: Smoke(_r_14_15_20)
+			: Presence(_r_14_15_22)
+			: User Input(_r_14_15_24)				
+				:o Preferences(_r_14_15_24_26)				
+	:o Actuation(_r_28)
+		:o Alarm(_r_28_29)
+			:o Acoustic(_r_28_29_31)
+			:o Visual(_r_28_29_32)
+		:o User Output(_r_28_30)
+			:o Audio(_r_28_30_34)
+			:o Image(_r_28_30_35)
+			:o Video(_r_28_30_36)
+			:o Text(_r_28_30_37)
+		:o Applience Operation(_r_28_38)
+			:o HVAC(_r_28_38_39)
+			:o Lighting(_r_28_38_41)			
+	:o Localization(_r_43)
+		:o Beacon-Based(_r_43_45)
+		:o RFID-Based(_r_43_46)
+		:o Fixed-Static(_r_43_47)
+</feature_tree>
+<constraints>
+</constraints>
+
+<context name="Default">
+<resolution feature="Communication" id="_r_1" status="true"/>
+<resolution feature="Comm Type" id="_r_1_2" status="true"/>
+<resolution feature="Periodical" id="_r_1_2_4" status="true"/>
+<resolution feature="Event Based" id="_r_1_2_5" status="false"/>
+<resolution feature="On Demand" id="_r_1_2_6" status="false"/>
+<resolution feature="Nodes Identity" id="_r_1_3" status="true"/>
+<resolution feature="Location Based" id="_r_1_3_7" status="false"/>
+<resolution feature="Adress Based" id="_r_1_3_8" status="true"/>
+<resolution feature="Unicast" id="_r_1_3_10_11" status="true"/>
+<resolution feature="Multcast" id="_r_1_3_10_12" status="false"/>
+<resolution feature="Mensurement" id="_r_14" status="true"/>
+<resolution feature="Temperature" id="_r_14_15_16" status="true"/>
+<resolution feature="Humidity" id="_r_14_15_17" status="true"/>
+<resolution feature="Light" id="_r_14_15_18" status="true"/>
+<resolution feature="Smoke" id="_r_14_15_20" status="true"/>
+<resolution feature="Presence" id="_r_14_15_22" status="false"/>
+<resolution feature="User Input" id="_r_14_15_24" status="true"/>
+<resolution feature="Preferences" id="_r_14_15_24_26" status="true"/>
+<resolution feature="Actuation" id="_r_28" status="true"/>
+<resolution feature="Alarm" id="_r_28_29" status="true"/>
+<resolution feature="Acoustic" id="_r_28_29_31" status="true"/>
+<resolution feature="Visual" id="_r_28_29_32" status="false"/>
+<resolution feature="User Output" id="_r_28_30" status="true"/>
+<resolution feature="Audio" id="_r_28_30_34" status="true"/>
+<resolution feature="Image" id="_r_28_30_35" status="false"/>
+<resolution feature="Video" id="_r_28_30_36" status="false"/>
+<resolution feature="Text" id="_r_28_30_37" status="false"/>
+<resolution feature="Applience Operation" id="_r_28_38" status="true"/>
+<resolution feature="HVAC" id="_r_28_38_39" status="true"/>
+<resolution feature="Lighting" id="_r_28_38_41" status="false"/>
+<resolution feature="Localization" id="_r_43" status="true"/>
+<resolution feature="Beacon-Based" id="_r_43_45" status="true"/>
+<resolution feature="RFID-Based" id="_r_43_46" status="true"/>
+<resolution feature="Fixed-Static" id="_r_43_47" status="true"/>
+<constraints/>
+</context>
+
+<context name="LocalizationByRFIDUnicastIoT">
+<resolution feature="Communication" id="_r_1" status="true"/>
+<resolution feature="Comm Type" id="_r_1_2" status="true"/>
+<resolution feature="Periodical" id="_r_1_2_4" status="false"/>
+<resolution feature="Event Based" id="_r_1_2_5" status="true"/>
+<resolution feature="On Demand" id="_r_1_2_6" status="false"/>
+<resolution feature="Nodes Identity" id="_r_1_3" status="true"/>
+<resolution feature="Location Based" id="_r_1_3_7" status="true"/>
+<resolution feature="Adress Based" id="_r_1_3_8" status="true"/>
+<resolution feature="Unicast" id="_r_1_3_10_11" status="true"/>
+<resolution feature="Multcast" id="_r_1_3_10_12" status="false"/>
+<resolution feature="Mensurement" id="_r_14" status="false"/>
+<resolution feature="Temperature" id="_r_14_15_16" status="false"/>
+<resolution feature="Humidity" id="_r_14_15_17" status="false"/>
+<resolution feature="Light" id="_r_14_15_18" status="false"/>
+<resolution feature="Smoke" id="_r_14_15_20" status="false"/>
+<resolution feature="Presence" id="_r_14_15_22" status="false"/>
+<resolution feature="User Input" id="_r_14_15_24" status="false"/>
+<resolution feature="Preferences" id="_r_14_15_24_26" status="false"/>
+<resolution feature="Actuation" id="_r_28" status="false"/>
+<resolution feature="Alarm" id="_r_28_29" status="false"/>
+<resolution feature="Acoustic" id="_r_28_29_31" status="false"/>
+<resolution feature="Visual" id="_r_28_29_32" status="false"/>
+<resolution feature="User Output" id="_r_28_30" status="true"/>
+<resolution feature="Audio" id="_r_28_30_34" status="false"/>
+<resolution feature="Image" id="_r_28_30_35" status="true"/>
+<resolution feature="Video" id="_r_28_30_36" status="false"/>
+<resolution feature="Text" id="_r_28_30_37" status="true"/>
+<resolution feature="Applience Operation" id="_r_28_38" status="false"/>
+<resolution feature="HVAC" id="_r_28_38_39" status="false"/>
+<resolution feature="Lighting" id="_r_28_38_41" status="false"/>
+<resolution feature="Localization" id="_r_43" status="true"/>
+<resolution feature="Beacon-Based" id="_r_43_45" status="false"/>
+<resolution feature="RFID-Based" id="_r_43_46" status="true"/>
+<resolution feature="Fixed-Static" id="_r_43_47" status="false"/>
+<constraints/>
+</context>
+
+</feature_model>

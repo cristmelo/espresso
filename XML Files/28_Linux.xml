@@ -1,0 +1,159 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Tue, Mar 8, 2016 - 5:50 PM  -->
+<feature_model name="Linux">
+<meta>
+<data name="description">Linux Kernel</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"></data>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r Linux(_r)
+	:m File_System(_r_1)
+		:g (_r_1_17) [1,1] 
+			: EXT_3(_r_1_17_18)
+			: Reiserfs(_r_1_17_19)
+			: JFS(_r_1_17_20)
+	:m General_Setup(_r_2)
+		:o Auditing_Support(_r_2_12)
+		:o Swap(_r_2_13)
+	:m Power_Management_Options(_r_3)
+		:o Software_Suspended(_r_3_14)
+		:o CPU_Frequency_Scaling(_r_3_15)
+		:o APM_BIOS_Support(_r_3_16)
+	:o Security_Options(_r_4)
+		:o NSA_SELinux(_r_4_25)
+		:o Socket_and_Networking(_r_4_26)
+			:o IPSec(_r_4_26_29)
+	:m Device_Drivers(_r_5)
+		:o SATA(_r_5_30)
+		:o Wireless_LAN(_r_5_31)
+		:o Networking_Device(_r_5_32)
+			:o Ethernet_10_or_100_MBit(_r_5_32_33)
+			:o Ethernet_1000_MBit(_r_5_32_34)
+	:o Networking_Options(_r_6)
+		:o IrDA(_r_6_43)
+		:o Bluetooth(_r_6_44)
+		:o TCP_IP(_r_6_45)
+			:o Multicasting(_r_6_45_46)
+			:o Tunneling(_r_6_45_47)
+			:o IPv6(_r_6_45_48)
+	:o Cryptography_Algorithms(_r_7)
+		:g (_r_7_21) [1,*] 
+			: MD5(_r_7_21_22)
+			: SHA256(_r_7_21_23)
+			: AES_Cipher(_r_7_21_24)
+	:m Processor_Type_and_Features(_r_8)
+		:m Processor_Family(_r_8_35)
+			:g (_r_8_35_37) [1,1] 
+				: Intel(_r_8_35_37_38)
+				: AMD(_r_8_35_37_39)
+				: Generic_x86_64(_r_8_35_37_40)
+		:o Symmetric_MultiProcessing_Support(_r_8_36)
+			:o Hyper_Threading_Support(_r_8_36_41)
+			:o Multi_core_Support(_r_8_36_42)
+</feature_tree>
+<constraints>
+constraint_1:~_r_3 or _r_8_36
+constraint_6:_r_5_31 or ~_r_6_44
+constraint_7:_r_2_13 or ~_r_3_14
+constraint_4:_r_7 or ~_r_4_26
+constraint_5:_r_5_31 or ~_r_6_43
+constraint_2:_r_5_31 or _r_5_32 or ~_r_6_45
+constraint_3:_r_6 or ~_r_4_26
+</constraints>
+
+<context name="IntelProcessor_Family">
+<resolution feature="File_System" id="_r_1" status="true"/>
+<resolution feature="EXT_3" id="_r_1_17_18" status="true"/>
+<resolution feature="Reiserfs" id="_r_1_17_19" status="false"/>
+<resolution feature="JFS" id="_r_1_17_20" status="false"/>
+<resolution feature="General_Setup" id="_r_2" status="true"/>
+<resolution feature="Auditing_Support" id="_r_2_12" status="true"/>
+<resolution feature="Swap" id="_r_2_13" status="true"/>
+<resolution feature="Power_Management_Options" id="_r_3" status="true"/>
+<resolution feature="Software_Suspended" id="_r_3_14" status="true"/>
+<resolution feature="CPU_Frequency_Scaling" id="_r_3_15" status="true"/>
+<resolution feature="APM_BIOS_Support" id="_r_3_16" status="true"/>
+<resolution feature="Security_Options" id="_r_4" status="true"/>
+<resolution feature="NSA_SELinux" id="_r_4_25" status="true"/>
+<resolution feature="Socket_and_Networking" id="_r_4_26" status="true"/>
+<resolution feature="IPSec" id="_r_4_26_29" status="true"/>
+<resolution feature="Device_Drivers" id="_r_5" status="true"/>
+<resolution feature="SATA" id="_r_5_30" status="true"/>
+<resolution feature="Wireless_LAN" id="_r_5_31" status="true"/>
+<resolution feature="Networking_Device" id="_r_5_32" status="true"/>
+<resolution feature="Ethernet_10_or_100_MBit" id="_r_5_32_33" status="true"/>
+<resolution feature="Ethernet_1000_MBit" id="_r_5_32_34" status="true"/>
+<resolution feature="Networking_Options" id="_r_6" status="true"/>
+<resolution feature="IrDA" id="_r_6_43" status="true"/>
+<resolution feature="Bluetooth" id="_r_6_44" status="true"/>
+<resolution feature="TCP_IP" id="_r_6_45" status="true"/>
+<resolution feature="Multicasting" id="_r_6_45_46" status="true"/>
+<resolution feature="Tunneling" id="_r_6_45_47" status="true"/>
+<resolution feature="IPv6" id="_r_6_45_48" status="true"/>
+<resolution feature="Cryptography_Algorithms" id="_r_7" status="true"/>
+<resolution feature="MD5" id="_r_7_21_22" status="true"/>
+<resolution feature="SHA256" id="_r_7_21_23" status="true"/>
+<resolution feature="AES_Cipher" id="_r_7_21_24" status="true"/>
+<resolution feature="Processor_Type_and_Features" id="_r_8" status="true"/>
+<resolution feature="Processor_Family" id="_r_8_35" status="true"/>
+<resolution feature="Intel" id="_r_8_35_37_38" status="true"/>
+<resolution feature="AMD" id="_r_8_35_37_39" status="false"/>
+<resolution feature="Generic_x86_64" id="_r_8_35_37_40" status="false"/>
+<resolution feature="Symmetric_MultiProcessing_Support" id="_r_8_36" status="true"/>
+<resolution feature="Hyper_Threading_Support" id="_r_8_36_41" status="true"/>
+<resolution feature="Multi_core_Support" id="_r_8_36_42" status="true"/>
+</context>
+
+
+<context name="Networking_OptionsOFF">
+<resolution feature="File_System" id="_r_1" status="true"/>
+<resolution feature="EXT_3" id="_r_1_17_18" status="true"/>
+<resolution feature="Reiserfs" id="_r_1_17_19" status="false"/>
+<resolution feature="JFS" id="_r_1_17_20" status="false"/>
+<resolution feature="General_Setup" id="_r_2" status="true"/>
+<resolution feature="Auditing_Support" id="_r_2_12" status="true"/>
+<resolution feature="Swap" id="_r_2_13" status="true"/>
+<resolution feature="Power_Management_Options" id="_r_3" status="true"/>
+<resolution feature="Software_Suspended" id="_r_3_14" status="true"/>
+<resolution feature="CPU_Frequency_Scaling" id="_r_3_15" status="true"/>
+<resolution feature="APM_BIOS_Support" id="_r_3_16" status="true"/>
+<resolution feature="Security_Options" id="_r_4" status="true"/>
+<resolution feature="NSA_SELinux" id="_r_4_25" status="true"/>
+<resolution feature="Socket_and_Networking" id="_r_4_26" status="false"/>
+<resolution feature="IPSec" id="_r_4_26_29" status="true"/>
+<resolution feature="Device_Drivers" id="_r_5" status="true"/>
+<resolution feature="SATA" id="_r_5_30" status="true"/>
+<resolution feature="Wireless_LAN" id="_r_5_31" status="false"/>
+<resolution feature="Networking_Device" id="_r_5_32" status="true"/>
+<resolution feature="Ethernet_10_or_100_MBit" id="_r_5_32_33" status="true"/>
+<resolution feature="Ethernet_1000_MBit" id="_r_5_32_34" status="true"/>
+<resolution feature="Networking_Options" id="_r_6" status="false"/>
+<resolution feature="IrDA" id="_r_6_43" status="false"/>
+<resolution feature="Bluetooth" id="_r_6_44" status="false"/>
+<resolution feature="TCP_IP" id="_r_6_45" status="false"/>
+<resolution feature="Multicasting" id="_r_6_45_46" status="false"/>
+<resolution feature="Tunneling" id="_r_6_45_47" status="false"/>
+<resolution feature="IPv6" id="_r_6_45_48" status="false"/>
+<resolution feature="Cryptography_Algorithms" id="_r_7" status="true"/>
+<resolution feature="MD5" id="_r_7_21_22" status="true"/>
+<resolution feature="SHA256" id="_r_7_21_23" status="true"/>
+<resolution feature="AES_Cipher" id="_r_7_21_24" status="true"/>
+<resolution feature="Processor_Type_and_Features" id="_r_8" status="true"/>
+<resolution feature="Processor_Family" id="_r_8_35" status="true"/>
+<resolution feature="Intel" id="_r_8_35_37_38" status="true"/>
+<resolution feature="AMD" id="_r_8_35_37_39" status="false"/>
+<resolution feature="Generic_x86_64" id="_r_8_35_37_40" status="false"/>
+<resolution feature="Symmetric_MultiProcessing_Support" id="_r_8_36" status="true"/>
+<resolution feature="Hyper_Threading_Support" id="_r_8_36_41" status="true"/>
+<resolution feature="Multi_core_Support" id="_r_8_36_42" status="true"/>
+</context>
+
+
+</feature_model>

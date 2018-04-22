@@ -1,0 +1,81 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, Mar 4, 2016 - 12:50 PM  -->
+<feature_model name="CarSensors">
+<meta>
+<data name="description">Description of the configuration options of a car</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"></data>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r Car(_r)
+	:m EmergencyCall(_r_1)
+		:g (_r_1_6) [1,1] 
+			: eCallEurope(_r_1_6_7)
+			: ERA_GLONASS_Russia(_r_1_6_8)
+	:m PositioningService(_r_2)
+		:g (_r_2_9) [1,1] 
+			: GPS(_r_2_9_10)
+			: GLONASS(_r_2_9_11)
+	:m AssistenceSystems(_r_3)
+		:o ParkingAssistance(_r_3_12)
+		:o AdaptiveCruiseControl(_r_3_13)
+	:o DistanceSensors(_r_4)
+		:g (_r_4_14) [1,*] 
+			: SideDistanceSensors(_r_4_14_15)
+			: FrontDistanceSensors(_r_4_14_16)
+				:g (_r_4_14_16_17) [1,1] 
+					: SlowFrontDistanceSensors(_r_4_14_16_17_18)
+					: FastFrontDistanceSensors(_r_4_14_16_17_19)
+	:m Infotainment(_r_5)
+</feature_tree>
+<constraints>
+constraint_1:~_r_1_6_7 or _r_2_9_10
+constraint_4:~_r_3_12 or _r_4_14_16
+constraint_5:~_r_3_13 or _r_4_14_16
+constraint_2:~_r_1_6_8 or _r_2_9_11
+constraint_3:~_r_3_12 or _r_4_14_15
+</constraints>
+
+<context name="FastFrontDistanceSensors">
+<resolution feature="EmergencyCall" id="_r_1" status="true"/>
+<resolution feature="eCallEurope" id="_r_1_6_7" status="true"/>
+<resolution feature="ERA_GLONASS_Russia" id="_r_1_6_8" status="false"/>
+<resolution feature="PositioningService" id="_r_2" status="true"/>
+<resolution feature="GPS" id="_r_2_9_10" status="true"/>
+<resolution feature="GLONASS" id="_r_2_9_11" status="false"/>
+<resolution feature="AssistenceSystems" id="_r_3" status="true"/>
+<resolution feature="ParkingAssistance" id="_r_3_12" status="true"/>
+<resolution feature="AdaptiveCruiseControl" id="_r_3_13" status="true"/>
+<resolution feature="DistanceSensors" id="_r_4" status="true"/>
+<resolution feature="SideDistanceSensors" id="_r_4_14_15" status="true"/>
+<resolution feature="FrontDistanceSensors" id="_r_4_14_16" status="true"/>
+<resolution feature="SlowFrontDistanceSensors" id="_r_4_14_16_17_18" status="false"/>
+<resolution feature="FastFrontDistanceSensors" id="_r_4_14_16_17_19" status="true"/>
+<resolution feature="Infotainment" id="_r_5" status="true"/>
+</context>
+
+<context name="ParkingAssistanceOFF">
+<resolution feature="EmergencyCall" id="_r_1" status="true"/>
+<resolution feature="eCallEurope" id="_r_1_6_7" status="true"/>
+<resolution feature="ERA_GLONASS_Russia" id="_r_1_6_8" status="false"/>
+<resolution feature="PositioningService" id="_r_2" status="true"/>
+<resolution feature="GPS" id="_r_2_9_10" status="true"/>
+<resolution feature="GLONASS" id="_r_2_9_11" status="false"/>
+<resolution feature="AssistenceSystems" id="_r_3" status="true"/>
+<resolution feature="ParkingAssistance" id="_r_3_12" status="false"/>
+<resolution feature="AdaptiveCruiseControl" id="_r_3_13" status="false"/>
+<resolution feature="DistanceSensors" id="_r_4" status="false"/>
+<resolution feature="SideDistanceSensors" id="_r_4_14_15" status="false"/>
+<resolution feature="FrontDistanceSensors" id="_r_4_14_16" status="false"/>
+<resolution feature="SlowFrontDistanceSensors" id="_r_4_14_16_17_18" status="false"/>
+<resolution feature="FastFrontDistanceSensors" id="_r_4_14_16_17_19" status="false"/>
+<resolution feature="Infotainment" id="_r_5" status="true"/>
+</context>
+
+</feature_model>

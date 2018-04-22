@@ -1,0 +1,70 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Thu, Jun 11, 2015 - 2:01 AM  -->
+<feature_model name="Scenario Application">
+<meta>
+<data name="description">Feature model to scenario Applications</data>
+<data name="creator">Gabriel Goulart</data>
+<data name="address"></data>
+<data name="email">gabrielgoulart@great.ufc.br</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">GREAT-UFC</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r ContentStore(_r)
+	:m Payment(_r_1)
+	:m Content Types(_r_2)
+		:g (_r_2_3) [1,*] 
+			: Video(_r_2_3_4)
+			: Music(_r_2_3_5)
+			: Aplications(_r_2_3_6)
+	:m History(_r_7)
+		:m Retrieval(_r_7_8)
+			:g (_r_7_8_9) [1,1] 
+				: Download(_r_7_8_9_10)
+				: Stream(_r_7_8_9_11)
+	:o Age Groups(_r_12)
+		:g (_r_12_13) [1,1] 
+			: U(_r_12_13_14)
+			: GP(_r_12_13_15)
+			: Adults(_r_12_13_16)
+</feature_tree>
+<constraints>
+</constraints>
+<context name="VideoApplicationStream">
+<resolution feature="Payment" id="_r_1" status="true"/>
+<resolution feature="Content Types" id="_r_2" status="true"/>
+<resolution feature="Video" id="_r_2_3_4" status="true"/>
+<resolution feature="Music" id="_r_2_3_5" status="false"/>
+<resolution feature="Aplications" id="_r_2_3_6" status="false"/>
+<resolution feature="History" id="_r_7" status="true"/>
+<resolution feature="Retrieval" id="_r_7_8" status="true"/>
+<resolution feature="Download" id="_r_7_8_9_10" status="false"/>
+<resolution feature="Stream" id="_r_7_8_9_11" status="true"/>
+<resolution feature="Age Groups" id="_r_12" status="true"/>
+<resolution feature="U" id="_r_12_13_14" status="true"/>
+<resolution feature="GP" id="_r_12_13_15" status="false"/>
+<resolution feature="Adults" id="_r_12_13_16" status="false"/>
+<constraints/>
+</context>
+
+<context name="MusicApplicationStream">
+<resolution feature="Payment" id="_r_1" status="true"/>
+<resolution feature="Content Types" id="_r_2" status="true"/>
+<resolution feature="Video" id="_r_2_3_4" status="false"/>
+<resolution feature="Music" id="_r_2_3_5" status="true"/>
+<resolution feature="Aplications" id="_r_2_3_6" status="true"/>
+<resolution feature="History" id="_r_7" status="true"/>
+<resolution feature="Retrieval" id="_r_7_8" status="true"/>
+<resolution feature="Download" id="_r_7_8_9_10" status="false"/>
+<resolution feature="Stream" id="_r_7_8_9_11" status="true"/>
+<resolution feature="Age Groups" id="_r_12" status="false"/>
+<resolution feature="U" id="_r_12_13_14" status="false"/>
+<resolution feature="GP" id="_r_12_13_15" status="false"/>
+<resolution feature="Adults" id="_r_12_13_16" status="false"/>
+<constraints/>
+</context>
+
+</feature_model>

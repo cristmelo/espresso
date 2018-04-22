@@ -1,0 +1,111 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, Feb 23, 2018 - 6:48 PM  -->
+<feature_model name="Broker Management">
+<meta>
+<data name="description">Broker Management</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"></data>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r Broker Management(_r)
+	:m Features(_r_1)
+		:m TVM Distribution(_r_1_3)
+			:g (_r_1_3_10) [1,1] 
+				: Uniform Policy(_r_1_3_10_11)
+				: Location Policy(_r_1_3_10_12)
+				: Specialization Policy(_r_1_3_10_13)
+		:m Broker Distribution(_r_1_4)
+			:g (_r_1_4_14) [1,1] 
+				: Minimum Policy(_r_1_4_14_15)
+				: StartUp Policy(_r_1_4_14_16)
+		:m Cache List(_r_1_5)
+			:m Cache List Interval(_r_1_5_17)
+				:g (_r_1_5_17_20) [1,1] 
+					: Fast Interval(_r_1_5_17_20_21)
+					: Standard Interval(_r_1_5_17_20_22)
+					: Slow Interval(_r_1_5_17_20_23)
+			:m Cache List Lenght(_r_1_5_18)
+				:g (_r_1_5_18_24) [1,1] 
+					: Long List Length(_r_1_5_18_24_25)
+					: Short List Length(_r_1_5_18_24_26)
+			:m Cache List Content(_r_1_5_19)
+				:g (_r_1_5_19_27) [1,1] 
+					: Generic Cache List Content(_r_1_5_19_27_28)
+					: Location Cache List Content(_r_1_5_19_27_29)
+					: Specialized Cache List Content(_r_1_5_19_27_30)
+	:m Context(_r_2)
+		:m Provider Fluctuation(_r_2_6)
+		:m Provider Latency(_r_2_7)
+		:m High Perf Requests(_r_2_8)
+		:m Broker Load(_r_2_9)
+</feature_tree>
+<constraints>
+</constraints>
+
+<context name="UniformAndMinimumDistribution">
+<resolution feature="Features" id="_r_1" status="true"/>
+<resolution feature="TVM Distribution" id="_r_1_3" status="true"/>
+<resolution feature="Uniform Policy" id="_r_1_3_10_11" status="true"/>
+<resolution feature="Location Policy" id="_r_1_3_10_12" status="false"/>
+<resolution feature="Specialization Policy" id="_r_1_3_10_13" status="false"/>
+<resolution feature="Broker Distribution" id="_r_1_4" status="true"/>
+<resolution feature="Minimum Policy" id="_r_1_4_14_15" status="true"/>
+<resolution feature="StartUp Policy" id="_r_1_4_14_16" status="false"/>
+<resolution feature="Cache List" id="_r_1_5" status="true"/>
+<resolution feature="Cache List Interval" id="_r_1_5_17" status="true"/>
+<resolution feature="Fast Interval" id="_r_1_5_17_20_21" status="false"/>
+<resolution feature="Standard Interval" id="_r_1_5_17_20_22" status="true"/>
+<resolution feature="Slow Interval" id="_r_1_5_17_20_23" status="false"/>
+<resolution feature="Cache List Lenght" id="_r_1_5_18" status="true"/>
+<resolution feature="Long List Length" id="_r_1_5_18_24_25" status="false"/>
+<resolution feature="Short List Length" id="_r_1_5_18_24_26" status="true"/>
+<resolution feature="Cache List Content" id="_r_1_5_19" status="true"/>
+<resolution feature="Generic Cache List Content" id="_r_1_5_19_27_28" status="true"/>
+<resolution feature="Location Cache List Content" id="_r_1_5_19_27_29" status="false"/>
+<resolution feature="Specialized Cache List Content" id="_r_1_5_19_27_30" status="false"/>
+<resolution feature="Context" id="_r_2" status="true"/>
+<resolution feature="Provider Fluctuation" id="_r_2_6" status="true"/>
+<resolution feature="Provider Latency" id="_r_2_7" status="true"/>
+<resolution feature="High Perf Requests" id="_r_2_8" status="true"/>
+<resolution feature="Broker Load" id="_r_2_9" status="true"/>
+
+<constraints/>
+</context>
+
+<context name="SpecializationAndStartUpDistribution">
+<resolution feature="Features" id="_r_1" status="true"/>
+<resolution feature="TVM Distribution" id="_r_1_3" status="true"/>
+<resolution feature="Uniform Policy" id="_r_1_3_10_11" status="false"/>
+<resolution feature="Location Policy" id="_r_1_3_10_12" status="false"/>
+<resolution feature="Specialization Policy" id="_r_1_3_10_13" status="true"/>
+<resolution feature="Broker Distribution" id="_r_1_4" status="true"/>
+<resolution feature="Minimum Policy" id="_r_1_4_14_15" status="false"/>
+<resolution feature="StartUp Policy" id="_r_1_4_14_16" status="true"/>
+<resolution feature="Cache List" id="_r_1_5" status="true"/>
+<resolution feature="Cache List Interval" id="_r_1_5_17" status="true"/>
+<resolution feature="Fast Interval" id="_r_1_5_17_20_21" status="false"/>
+<resolution feature="Standard Interval" id="_r_1_5_17_20_22" status="true"/>
+<resolution feature="Slow Interval" id="_r_1_5_17_20_23" status="false"/>
+<resolution feature="Cache List Lenght" id="_r_1_5_18" status="true"/>
+<resolution feature="Long List Length" id="_r_1_5_18_24_25" status="false"/>
+<resolution feature="Short List Length" id="_r_1_5_18_24_26" status="true"/>
+<resolution feature="Cache List Content" id="_r_1_5_19" status="true"/>
+<resolution feature="Generic Cache List Content" id="_r_1_5_19_27_28" status="true"/>
+<resolution feature="Location Cache List Content" id="_r_1_5_19_27_29" status="false"/>
+<resolution feature="Specialized Cache List Content" id="_r_1_5_19_27_30" status="false"/>
+<resolution feature="Context" id="_r_2" status="true"/>
+<resolution feature="Provider Fluctuation" id="_r_2_6" status="true"/>
+<resolution feature="Provider Latency" id="_r_2_7" status="true"/>
+<resolution feature="High Perf Requests" id="_r_2_8" status="true"/>
+<resolution feature="Broker Load" id="_r_2_9" status="true"/>
+
+<constraints/>
+</context>
+
+</feature_model>

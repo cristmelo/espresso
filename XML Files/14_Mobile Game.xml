@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Wed, Jul 1, 2015 - 9:36 PM  --><feature_model name="17-mobile Game">
+<meta>
+<data name="description">Example of FM</data>
+<data name="creator">Gabriel Goulart</data>
+<data name="address"/>
+<data name="email">gabrielgoulart@great.ufc.br</data>
+<data name="phone"/>
+<data name="website"/>
+<data name="organization">Great-UFC</data>
+<data name="department"/>
+<data name="date"/>
+<data name="reference"/>
+</meta>
+<feature_tree>
+:r Mobile Game(_r)
+	:o Conectivity(_r_2)
+		:g (_r_2_7) [1,*] 
+			: Bluetooth(_r_2_7_8)
+			: Network(_r_2_7_9)
+				:g (_r_2_7_9_10) [1,1] 
+					: EDGE(_r_2_7_9_10_11)
+					: HSPA(_r_2_7_9_10_12)
+					: LTE(_r_2_7_9_10_13)
+					: WiFi(_r_2_7_9_10_14)
+	:m Graphquality(_r_3)
+		:g (_r_3_15) [1,1] 
+			: Low(_r_3_15_16)
+			: Medium(_r_3_15_17)
+			: High(_r_3_15_18)
+	:o Sound(_r_4)
+		:m Quality(_r_4_19)
+			:g (_r_4_19_21) [1,1] 
+				: 128kbps(_r_4_19_21_22)
+				: 192kbps(_r_4_19_21_23)
+				: 256kbps(_r_4_19_21_24)
+		:o Vibration(_r_4_20)
+	:o Multiplayer(_r_5)
+		:g (_r_5_25) [1,1] 
+			: Local(_r_5_25_26)
+			: Online(_r_5_25_27)
+	:o GlobalscoreBoard(_r_6)
+</feature_tree>
+<constraints>
+constraint_1:_r_2_7_9 or ~_r_6
+constraint_2:~_r_5_25_26 or _r_2_7_8 or ~_r_2_7_9_10_14
+constraint_3:~_r_5_25_27 or _r_2_7_9_10_12 or _r_2_7_9_10_13 or _r_2_7_9_10_14
+</constraints>
+<context name="C1">
+<resolution feature="Conectivity" id="_r_2" status="true"/>
+<resolution feature="Bluetooth" id="_r_2_7_8" status="false"/>
+<resolution feature="Network" id="_r_2_7_9" status="true"/>
+<resolution feature="EDGE" id="_r_2_7_9_10_11" status="false"/>
+<resolution feature="HSPA" id="_r_2_7_9_10_12" status="true"/>
+<resolution feature="LTE" id="_r_2_7_9_10_13" status="false"/>
+<resolution feature="WiFi" id="_r_2_7_9_10_14" status="false"/>
+<resolution feature="Graphquality" id="_r_3" status="true"/>
+<resolution feature="Low" id="_r_3_15_16" status="false"/>
+<resolution feature="Medium" id="_r_3_15_17" status="false"/>
+<resolution feature="High" id="_r_3_15_18" status="true"/>
+<resolution feature="Sound" id="_r_4" status="true"/>
+<resolution feature="Quality" id="_r_4_19" status="true"/>
+<resolution feature="128kbps" id="_r_4_19_21_22" status="false"/>
+<resolution feature="192kbps" id="_r_4_19_21_23" status="false"/>
+<resolution feature="256kbps" id="_r_4_19_21_24" status="true"/>
+<resolution feature="Vibration" id="_r_4_20" status="true"/>
+<resolution feature="Multiplayer" id="_r_5" status="true"/>
+<resolution feature="Local" id="_r_5_25_26" status="false"/>
+<resolution feature="Online" id="_r_5_25_27" status="true"/>
+<resolution feature="GlobalscoreBoard" id="_r_6" status="true"/>
+<constraints/>
+</context>
+
+<context name="C2">
+<resolution feature="Conectivity" id="_r_2" status="true"/>
+<resolution feature="Bluetooth" id="_r_2_7_8" status="true"/>
+<resolution feature="Network" id="_r_2_7_9" status="true"/>
+<resolution feature="EDGE" id="_r_2_7_9_10_11" status="false"/>
+<resolution feature="HSPA" id="_r_2_7_9_10_12" status="false"/>
+<resolution feature="LTE" id="_r_2_7_9_10_13" status="false"/>
+<resolution feature="WiFi" id="_r_2_7_9_10_14" status="true"/>
+<resolution feature="Graphquality" id="_r_3" status="true"/>
+<resolution feature="Low" id="_r_3_15_16" status="false"/>
+<resolution feature="Medium" id="_r_3_15_17" status="false"/>
+<resolution feature="High" id="_r_3_15_18" status="true"/>
+<resolution feature="Sound" id="_r_4" status="true"/>
+<resolution feature="Quality" id="_r_4_19" status="true"/>
+<resolution feature="128kbps" id="_r_4_19_21_22" status="false"/>
+<resolution feature="192kbps" id="_r_4_19_21_23" status="false"/>
+<resolution feature="256kbps" id="_r_4_19_21_24" status="true"/>
+<resolution feature="Vibration" id="_r_4_20" status="true"/>
+<resolution feature="Multiplayer" id="_r_5" status="true"/>
+<resolution feature="Local" id="_r_5_25_26" status="false"/>
+<resolution feature="Online" id="_r_5_25_27" status="true"/>
+<resolution feature="GlobalscoreBoard" id="_r_6" status="true"/>
+<constraints/>
+</context>
+</feature_model>

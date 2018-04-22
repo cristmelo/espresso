@@ -1,0 +1,133 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Tue, Mar 8, 2016 - 4:18 PM  -->
+<feature_model name="SalesScenario">
+<meta>
+<data name="description">Sales Scenario</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"></data>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r SalesScenario(_r)
+	:m Account_Mgmnt(_r_1)
+		:g (_r_1_2) [1,*] 
+			: Customer_Ratings(_r_1_2_3)
+			: Customer_Groups(_r_1_2_4)
+				:g (_r_1_2_4_5) [1,*] 
+					: Consumer(_r_1_2_4_5_6)
+					: Enterprise(_r_1_2_4_5_7)
+						:g (_r_1_2_4_5_7_8) [1,*] 
+							: Competitor(_r_1_2_4_5_7_8_9)
+							: Prospect(_r_1_2_4_5_7_8_10)
+	:m Product_Mgmnt(_r_11)
+		:m Stock_Mgmnt(_r_11_12)
+			:g (_r_11_12_13) [1,1] 
+				: Single_Stock(_r_11_12_13_14)
+				: Multiple_Stock(_r_11_12_13_15)
+	:o Communication(_r_16)
+		:g (_r_16_17) [1,*] 
+			: Email(_r_16_17_18)
+			: Letter(_r_16_17_19)
+			: Fax(_r_16_17_20)
+	:m Customer_Order_Mgmnt(_r_21)
+		:g (_r_21_22) [1,*] 
+			: Sales_Processing(_r_21_22_23)
+			: Quotation(_r_21_22_24)
+		:o Avaliability_Check(_r_21_25)
+		:o Pricing_Strategy(_r_21_26)
+			:o Enterprise_Discount(_r_21_26_33)
+			:o Quantity_Discount(_r_21_26_34)
+			:o VATPricing(_r_21_26_35)
+		:o Credit_Check(_r_21_27)
+		:o Approval_Process(_r_21_28)
+			:g (_r_21_28_30) [1,*] 
+				: AutomaticApprove(_r_21_28_30_31)
+				: ManualApprove(_r_21_28_30_32)
+		:o Returns(_r_21_29)
+	:o Payment(_r_36)
+		:g (_r_36_37) [1,*] 
+			: Invoicing(_r_36_37_38)
+			: Cash_On_Delivery(_r_36_37_39)
+			: Credit_Card(_r_36_37_40)
+</feature_tree>
+<constraints>
+constraint_1:_r_11_12 or ~_r_21_25
+constraint_2:_r_1_2_4_5_7 or ~_r_21_26_33
+</constraints>
+
+<context name="EnterpriseDiscountON">
+<resolution feature="Account_Mgmnt" id="_r_1" status="true"/>
+<resolution feature="Customer_Ratings" id="_r_1_2_3" status="false"/>
+<resolution feature="Customer_Groups" id="_r_1_2_4" status="true"/>
+<resolution feature="Consumer" id="_r_1_2_4_5_6" status="true"/>
+<resolution feature="Enterprise" id="_r_1_2_4_5_7" status="true"/>
+<resolution feature="Competitor" id="_r_1_2_4_5_7_8_9" status="false"/>
+<resolution feature="Prospect" id="_r_1_2_4_5_7_8_10" status="true"/>
+<resolution feature="Product_Mgmnt" id="_r_11" status="true"/>
+<resolution feature="Stock_Mgmnt" id="_r_11_12" status="true"/>
+<resolution feature="Single_Stock" id="_r_11_12_13_14" status="true"/>
+<resolution feature="Multiple_Stock" id="_r_11_12_13_15" status="false"/>
+<resolution feature="Communication" id="_r_16" status="false"/>
+<resolution feature="Email" id="_r_16_17_18" status="false"/>
+<resolution feature="Letter" id="_r_16_17_19" status="false"/>
+<resolution feature="Fax" id="_r_16_17_20" status="false"/>
+<resolution feature="Customer_Order_Mgmnt" id="_r_21" status="true"/>
+<resolution feature="Sales_Processing" id="_r_21_22_23" status="true"/>
+<resolution feature="Quotation" id="_r_21_22_24" status="true"/>
+<resolution feature="Avaliability_Check" id="_r_21_25" status="false"/>
+<resolution feature="Pricing_Strategy" id="_r_21_26" status="true"/>
+<resolution feature="Enterprise_Discount" id="_r_21_26_33" status="true"/>
+<resolution feature="Quantity_Discount" id="_r_21_26_34" status="false"/>
+<resolution feature="VATPricing" id="_r_21_26_35" status="false"/>
+<resolution feature="Credit_Check" id="_r_21_27" status="false"/>
+<resolution feature="Approval_Process" id="_r_21_28" status="false"/>
+<resolution feature="AutomaticApprove" id="_r_21_28_30_31" status="false"/>
+<resolution feature="ManualApprove" id="_r_21_28_30_32" status="false"/>
+<resolution feature="Returns" id="_r_21_29" status="true"/>
+<resolution feature="Payment" id="_r_36" status="true"/>
+<resolution feature="Invoicing" id="_r_36_37_38" status="true"/>
+<resolution feature="Cash_On_Delivery" id="_r_36_37_39" status="true"/>
+<resolution feature="Credit_Card" id="_r_36_37_40" status="true"/>
+</context>
+
+<context name="AvaliabilityCheckON">
+<resolution feature="Account_Mgmnt" id="_r_1" status="true"/>
+<resolution feature="Customer_Ratings" id="_r_1_2_3" status="true"/>
+<resolution feature="Customer_Groups" id="_r_1_2_4" status="false"/>
+<resolution feature="Consumer" id="_r_1_2_4_5_6" status="false"/>
+<resolution feature="Enterprise" id="_r_1_2_4_5_7" status="false"/>
+<resolution feature="Competitor" id="_r_1_2_4_5_7_8_9" status="false"/>
+<resolution feature="Prospect" id="_r_1_2_4_5_7_8_10" status="false"/>
+<resolution feature="Product_Mgmnt" id="_r_11" status="true"/>
+<resolution feature="Stock_Mgmnt" id="_r_11_12" status="true"/>
+<resolution feature="Single_Stock" id="_r_11_12_13_14" status="true"/>
+<resolution feature="Multiple_Stock" id="_r_11_12_13_15" status="false"/>
+<resolution feature="Communication" id="_r_16" status="false"/>
+<resolution feature="Email" id="_r_16_17_18" status="false"/>
+<resolution feature="Letter" id="_r_16_17_19" status="false"/>
+<resolution feature="Fax" id="_r_16_17_20" status="false"/>
+<resolution feature="Customer_Order_Mgmnt" id="_r_21" status="true"/>
+<resolution feature="Sales_Processing" id="_r_21_22_23" status="true"/>
+<resolution feature="Quotation" id="_r_21_22_24" status="true"/>
+<resolution feature="Avaliability_Check" id="_r_21_25" status="true"/>
+<resolution feature="Pricing_Strategy" id="_r_21_26" status="true"/>
+<resolution feature="Enterprise_Discount" id="_r_21_26_33" status="false"/>
+<resolution feature="Quantity_Discount" id="_r_21_26_34" status="false"/>
+<resolution feature="VATPricing" id="_r_21_26_35" status="false"/>
+<resolution feature="Credit_Check" id="_r_21_27" status="false"/>
+<resolution feature="Approval_Process" id="_r_21_28" status="false"/>
+<resolution feature="AutomaticApprove" id="_r_21_28_30_31" status="false"/>
+<resolution feature="ManualApprove" id="_r_21_28_30_32" status="false"/>
+<resolution feature="Returns" id="_r_21_29" status="true"/>
+<resolution feature="Payment" id="_r_36" status="true"/>
+<resolution feature="Invoicing" id="_r_36_37_38" status="true"/>
+<resolution feature="Cash_On_Delivery" id="_r_36_37_39" status="true"/>
+<resolution feature="Credit_Card" id="_r_36_37_40" status="true"/>
+</context>
+
+</feature_model>

@@ -1,0 +1,78 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Fri, Feb 23, 2018 - 5:54 PM  -->
+<feature_model name="SmartHomeRise">
+<meta>
+<data name="description">SmartHomeRise</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"/>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"/>
+<data name="website"/>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"/>
+<data name="date"/>
+<data name="reference"/>
+</meta>
+<feature_tree>
+:r SmartHomeRise(_r) 
+	:m SecurityControl(_r_1) 
+		:o Alarm(_r_1_4) 
+		:m LockDoors(_r_1_5) 
+		:o PanicMode(_r_1_6) 
+		:m PresenceIlusion(_r_1_7) 
+	:m IluminationControl(_r_2) 
+		:m UserIlumination(_r_2_8) 
+		:o AutomatedIlumination(_r_2_9) 
+			:g (_r_2_9_12) [1,*] 
+				: ByPresence(_r_2_9_12_13) 
+				: ByLuminosity(_r_2_9_12_14) 
+	:o TemperatureControl(_r_3) 
+		:m UserControl(_r_3_10) 
+			:g (_r_3_10_15) [1,1] 
+				: FromWindow(_r_3_10_15_16) 
+				: FromAirConditioning(_r_3_10_15_21) 
+		:o AutomatedControl(_r_3_11) 
+			:g (_r_3_11_18) [1,*] 
+				: FromWindow(_r_3_11_18_19) 
+				: FromAirConditioning(_r_3_11_18_22)
+</feature_tree>
+<constraints></constraints>
+<context name="TemperatureControlAutomatedFromWindow">
+<resolution feature="SecurityControl" id="_r_1" status="true"/>
+<resolution feature="LockDoors" id="_r_1_5" status="true"/>
+<resolution feature="PresenceIlusion" id="_r_1_7" status="true"/>
+<resolution feature="IluminationControl" id="_r_2" status="true"/>
+<resolution feature="UserIlumination" id="_r_2_8" status="true"/>
+<resolution feature="TemperatureControl" id="_r_3" status="true"/>
+<resolution feature="UserControl" id="_r_3_10" status="true"/>
+<resolution feature="FromWindow" id="_r_3_10_15_16" status="true"/>
+<resolution feature="AutomatedControl" id="_r_3_11" status="true"/>
+<resolution feature="FromWindow" id="_r_3_11_18_19" status="true"/>
+<resolution feature="Alarm" id="_r_1_4" status="false"/>
+<resolution feature="PanicMode" id="_r_1_6" status="false"/>
+<resolution feature="Alarm" id="_r_1_4" status="false"/>
+<resolution feature="FromAirConditioning" id="_r_3_11_18_22" status="false"/>
+
+<constraints/>
+</context>
+
+<context name="TemperatureUserControl">
+<resolution feature="SecurityControl" id="_r_1" status="true"/>
+<resolution feature="LockDoors" id="_r_1_5" status="true"/>
+<resolution feature="PresenceIlusion" id="_r_1_7" status="true"/>
+<resolution feature="IluminationControl" id="_r_2" status="true"/>
+<resolution feature="UserIlumination" id="_r_2_8" status="true"/>
+<resolution feature="TemperatureControl" id="_r_3" status="true"/>
+<resolution feature="UserControl" id="_r_3_10" status="true"/>
+<resolution feature="FromWindow" id="_r_3_10_15_16" status="true"/>
+<resolution feature="AutomatedControl" id="_r_3_11" status="false"/>
+<resolution feature="FromWindow" id="_r_3_11_18_19" status="false"/>
+<resolution feature="Alarm" id="_r_1_4" status="false"/>
+<resolution feature="PanicMode" id="_r_1_6" status="false"/>
+<resolution feature="Alarm" id="_r_1_4" status="true"/>
+<resolution feature="FromAirConditioning" id="_r_3_11_18_22" status="false"/>
+
+<constraints/>
+</context>
+
+
+</feature_model>

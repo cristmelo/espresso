@@ -1,0 +1,91 @@
+<!-- This model was created online using SPLOT's Feature Model Editor (http://www.splot-research.org) on Sun, Jun 21, 2015 - 2:24 PM  -->
+<feature_model name="ConferenceContext">
+<meta>
+<data name="description">Model for context as a dynamic product line of  a conference</data>
+<data name="creator">Jefferson da Silva Barbosa</data>
+<data name="address"></data>
+<data name="email">jefferson.sb.es@gmail.com</data>
+<data name="phone"></data>
+<data name="website"></data>
+<data name="organization">Universidade Federal do Ceará</data>
+<data name="department"></data>
+<data name="date"></data>
+<data name="reference"></data>
+</meta>
+<feature_tree>
+:r ConferenceContext(_r)
+	:o Person(_r_1)
+		:g (_r_1_2) [1,*] 
+			: Location(_r_1_2_3)
+				:g (_r_1_2_3_4) [1,*] 
+					: RoomResolution(_r_1_2_3_4_5)
+					: BuildingResolution(_r_1_2_3_4_6)
+			: Role(_r_1_2_7)
+				:g (_r_1_2_7_8) [1,1] 
+					: StaticRole(_r_1_2_7_8_9)
+					: CurrentRole(_r_1_2_7_8_10)
+			: Publications(_r_1_2_11)
+				:g (_r_1_2_11_12) [1,*] 
+					: ConferencePapers(_r_1_2_11_12_13)
+					: JournalPapers(_r_1_2_11_12_14)
+					: BookChapters(_r_1_2_11_12_15)
+			: ContactDetails(_r_1_2_16)
+	:o Conference(_r_17)
+		:o Venue(_r_17_18)
+		:o PartipatingPeople(_r_17_19)
+			:g (_r_17_19_20) [1,*] 
+				: PhDStudent(_r_17_19_20_21)
+				: Experts(_r_17_19_20_22)
+					:g (_r_17_19_20_22_23) [1,1] 
+						: HavingAwards(_r_17_19_20_22_23_24)
+						: HavingJournalPublications(_r_17_19_20_22_23_25)
+</feature_tree>
+<constraints>
+</constraints>
+<context name="Default">
+<resolution feature="Person" id="_r_1" status="true"/>
+<resolution feature="Location" id="_r_1_2_3" status="true"/>
+<resolution feature="RoomResolution" id="_r_1_2_3_4_5" status="true"/>
+<resolution feature="BuildingResolution" id="_r_1_2_3_4_6" status="false"/>
+<resolution feature="Role" id="_r_1_2_7" status="false"/>
+<resolution feature="StaticRole" id="_r_1_2_7_8_9" status="false"/>
+<resolution feature="CurrentRole" id="_r_1_2_7_8_10" status="false"/>
+<resolution feature="Publications" id="_r_1_2_11" status="true"/>
+<resolution feature="ConferencePapers" id="_r_1_2_11_12_13" status="false"/>
+<resolution feature="JournalPapers" id="_r_1_2_11_12_14" status="true"/>
+<resolution feature="BookChapters" id="_r_1_2_11_12_15" status="false"/>
+<resolution feature="ContactDetails" id="_r_1_2_16" status="false"/>
+<resolution feature="Conference" id="_r_17" status="true"/>
+<resolution feature="Venue" id="_r_17_18" status="false"/>
+<resolution feature="PartipatingPeople" id="_r_17_19" status="true"/>
+<resolution feature="PhDStudent" id="_r_17_19_20_21" status="false"/>
+<resolution feature="Experts" id="_r_17_19_20_22" status="true"/>
+<resolution feature="HavingAwards" id="_r_17_19_20_22_23_24" status="false"/>
+<resolution feature="HavingJournalPublications" id="_r_17_19_20_22_23_25" status="true"/>
+<constraints/>
+</context>
+
+<context name="Conference_Jornal_Phd">
+<resolution feature="Person" id="_r_1" status="true"/>
+<resolution feature="Location" id="_r_1_2_3" status="true"/>
+<resolution feature="RoomResolution" id="_r_1_2_3_4_5" status="true"/>
+<resolution feature="BuildingResolution" id="_r_1_2_3_4_6" status="false"/>
+<resolution feature="Role" id="_r_1_2_7" status="true"/>
+<resolution feature="StaticRole" id="_r_1_2_7_8_9" status="true"/>
+<resolution feature="CurrentRole" id="_r_1_2_7_8_10" status="false"/>
+<resolution feature="Publications" id="_r_1_2_11" status="true"/>
+<resolution feature="ConferencePapers" id="_r_1_2_11_12_13" status="false"/>
+<resolution feature="JournalPapers" id="_r_1_2_11_12_14" status="true"/>
+<resolution feature="BookChapters" id="_r_1_2_11_12_15" status="false"/>
+<resolution feature="ContactDetails" id="_r_1_2_16" status="false"/>
+<resolution feature="Conference" id="_r_17" status="true"/>
+<resolution feature="Venue" id="_r_17_18" status="false"/>
+<resolution feature="PartipatingPeople" id="_r_17_19" status="true"/>
+<resolution feature="PhDStudent" id="_r_17_19_20_21" status="true"/>
+<resolution feature="Experts" id="_r_17_19_20_22" status="true"/>
+<resolution feature="HavingAwards" id="_r_17_19_20_22_23_24" status="true"/>
+<resolution feature="HavingJournalPublications" id="_r_17_19_20_22_23_25" status="true"/>
+<constraints/>
+</context>
+
+</feature_model>
